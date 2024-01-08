@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
+import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 
 const Portfolio = () => {
     return (
-        <>
+        <Container>
             <Row>
                 <Col md={12}>
                     <div className="content-wrapper">
@@ -14,7 +15,7 @@ const Portfolio = () => {
                     </div>
                 </Col>
             </Row>
-        </>
+        </Container>
     )
 }
 

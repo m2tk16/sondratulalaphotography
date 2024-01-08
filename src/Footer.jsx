@@ -2,13 +2,14 @@ import React from "react";
 import "./App.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 import { Envelope, Instagram } from 'react-bootstrap-icons';
 
 
 const Footer = () => {
 
     return (
-        <div className="footer-container">
+        <Container className="footer-container">
             <hr></hr> 
             <Row>
                 <Col xs={{ span: 3, offset: 1 }} className="footer-link-title">
@@ -52,7 +53,7 @@ const Footer = () => {
             <Row>
                 <Col xs={12} className="footer-year">Sondra Tulala Photography - 2024</Col>
             </Row>
-        </div>
+        </Container>
     )
 }
 
