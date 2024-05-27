@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-import NavBar from "./NavBar";
-import Home from "./Home";
-import About from "./About";
-import Portfolio from "./Portfolio";
-import Footer from "./Footer";
+import NavBar from "./Navigation/navbar";
+import Home from "./Home/home";
+import About from "./About/about";
+import Portfolio from "./Gallary/gallary";
+import Footer from "./Utilities/footer";
 
 
 function App() {

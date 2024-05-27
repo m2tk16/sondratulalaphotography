@@ -1,0 +1,28 @@
+.gallary-image {
+    border-radius: 8px;
+    box-shadow: 2 2 4px rgb(172, 161, 161);
+}
+
+.gallary-image-wrapper {
+    padding:.5em;
+    border: .5px solid rgb(81, 73, 73);
+    border-radius: 4px;
+}
+
+.gallary-text-row {
+    background-color:beige;
+}
+
+.gallary-image-row {
+    border: .5px solid rgb(81, 73, 73);
+    border-radius: 8px;
+}
+
+.col-10-spaccer {
+    padding-top:2em;
+
+}
+
+.gallary-image-text {
+    padding-top: 1em;
+}

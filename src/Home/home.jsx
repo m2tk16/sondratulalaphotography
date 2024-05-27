@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
+import "./home.css";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
-import IntoTheFog from './images/into_the_fog.png';
+import IntoTheFog from '../images/into_the_fog.png'
 
 
 const Home = () => {
