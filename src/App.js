@@ -7,7 +7,7 @@ import "@aws-amplify/ui-react/styles.css";
 import NavBar from "./Navigation/navbar";
 import Home from "./Home/home";
 import About from "./About/about";
-import Portfolio from "./Gallary/gallary";
+import Gallary from "./Gallary/gallary";
 import Footer from "./Utilities/footer";
 
 
@@ -35,7 +35,7 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Home />} />
             <Route path='/about' element={<About/>} />
-            <Route path='/portfolio' element={<Portfolio/>} />
+            <Route path='/portfolio' element={<Gallary/>} />
           </Routes>
           <Footer />
         </Router>
