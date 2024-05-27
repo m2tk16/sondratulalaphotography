@@ -32,7 +32,7 @@ const NavBar = () => {
             <Nav>
               <Nav.Link href="/" className="me-auto nav-link">Home</Nav.Link>
               <Nav.Link href="/about" className="me-auto nav-link">About</Nav.Link>
-              <Nav.Link href="/portfolio" className="me-auto nav-link">Portfolio</Nav.Link>
+              <Nav.Link href="/gallary" className="me-auto nav-link">Gallary</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
