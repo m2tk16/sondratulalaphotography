@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import { Envelope, Instagram } from 'react-bootstrap-icons';
 
-
 const Footer = () => {
 
     return (

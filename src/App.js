@@ -7,9 +7,10 @@ import "@aws-amplify/ui-react/styles.css";
 import NavBar from "./Navigation/navbar";
 import Home from "./Home/home";
 import About from "./About/about";
-import Gallary from "./Gallary/gallary";
+import Portfolio from "./Portfolio/portfolio";
 import Footer from "./Utilities/footer";
-
+import Subscribe from "./Subscribe/subscribe";
+import Unsubscribe from "./Unsubscribe/unsubscribe";
 
 function App() {
   // const [endpoint, setEndPoint] = useState({})
@@ -35,7 +36,9 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Home />} />
             <Route path='/about' element={<About/>} />
-            <Route path='/gallary' element={<Gallary/>} />
+            <Route path='/portfolio' element={<Portfolio/>} />
+            <Route path='/subscribe' element={<Subscribe/>} />
+            <Route path='/unsubscribe' element={<Unsubscribe/>} />
           </Routes>
           <Footer />
         </Router>

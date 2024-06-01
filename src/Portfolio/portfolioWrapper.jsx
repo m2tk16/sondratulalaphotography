@@ -1,17 +1,17 @@
 import React from "react";
-import "./gallary.css";
+import "./portfolio.css";
 import Image from 'react-bootstrap/Image';
 import homeImage from '../images/into_the_fog.png';
 
-interface gallaryProps {
+interface portfolioProps {
     path: object;
 }
 
-const GallaryWrapper = (props: gallaryProps) => {
+const PortfolioWrapper = (props: portfolioProps) => {
     return (
-        <div class="p-6 gallary-image-wrapper">
+        <div class="p-6 portfolio-image-wrapper">
             <Image 
-                className="gallary-image" 
+                className="portfolio-image" 
                 src={homeImage}
                 fluid 
             />
@@ -22,7 +22,7 @@ const GallaryWrapper = (props: gallaryProps) => {
                     </div>
                 </div>
                 <hr></hr>
-                <div class="row gallary-image-text">
+                <div class="row portfolio-image-text">
                     <div class="col-4 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" 
                             width="40" 
@@ -56,4 +56,4 @@ const GallaryWrapper = (props: gallaryProps) => {
     )
 }
 
-export default GallaryWrapper;
+export default PortfolioWrapper;
