@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
+import "./navbar.css";
 import SacramentoFont from 'webfontloader';
 import { Hub } from "aws-amplify/utils";
 import { signInWithRedirect, signOut, getCurrentUser, AuthUser } from "aws-amplify/auth";
@@ -76,12 +77,12 @@ const NavBar = () => {
               <Nav.Link href="/about" className="me-auto nav-link">About</Nav.Link>
               <Nav.Link href="/portfolio" className="me-auto nav-link">Portfolio</Nav.Link>
             </Nav>
-            <div class="login-wrapper">
+            <div className="login-wrapper">
               <Button size="sm" variant="outline-secondary" onClick={() => signInWithRedirect({ provider: "Google"})}>
                 Login
               </Button>
             </div>
-            <div class="signout-wrapper">
+            <div className="signout-wrapper">
               <Button size="sm" variant="outline-secondary" onClick={() => signOut()}>
                 Sign Out
               </Button>
