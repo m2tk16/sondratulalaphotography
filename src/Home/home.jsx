@@ -10,7 +10,7 @@ import IntoTheFog from '../images/into_the_fog.png'
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [imageUrl, setImageUrl] = useState(null);
+  // const [imageUrl, setImageUrl] = useState(null);
 
 
   useEffect(() => {
@@ -22,10 +22,9 @@ const Home = () => {
         console.log("Listed images:", homeImages);
 
         if (homeImages.length > 0 && homeImages[0].key) {
-          // Get the URL for the first image
           const url = await getUrl(homeImages[0].key);
           console.log("Fetched URL:", url);
-          setImageUrl(url);
+          //setImageUrl(url);
         } else {
           console.error("No images found in the specified folder.");
         }

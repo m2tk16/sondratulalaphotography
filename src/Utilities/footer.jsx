@@ -53,7 +53,7 @@ const Footer = () => {
             </Row>
             <hr></hr>
             <Row>
-                <Col xs={12} className="footer-year">Sondra Tulala Photography - 2025</Col>
+                <Col xs={12} className="footer-year">Sondra Tulala Photography | 2025</Col>
             </Row>
         </Container>
     )

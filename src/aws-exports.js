@@ -10,11 +10,9 @@ const awsmobile = {
     "oauth": {
         "domain": "sondratulalaphotogra4567947a-4567947a-dev.auth.us-east-1.amazoncognito.com",
         "scope": [
-            "phone",
             "email",
             "openid",
-            "profile",
-            "aws.cognito.signin.user.admin"
+            "profile"
         ],
         "redirectSignIn": "http://localhost:3000/,https://www.sondratulalaphotography.com/",
         "redirectSignOut": "https://www.sondratulalaphotography.com/,http://localhost:3000/",
