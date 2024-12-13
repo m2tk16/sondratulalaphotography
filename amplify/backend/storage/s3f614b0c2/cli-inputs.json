@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3f614b0c2",
+  "policyUUID": "f614b0c2",
+  "bucketName": "sondratulalaphotogra57ef4c60cea34275803abda3c9f",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

@@ -69,8 +69,9 @@ const NavBar = () => {
           >
             <Nav>
               <Nav.Link href="/" className="me-auto nav-link">Home</Nav.Link>
-              <Nav.Link href="/about" className="me-auto nav-link">About</Nav.Link>
               <Nav.Link href="/portfolio" className="me-auto nav-link">Portfolio</Nav.Link>
+              <Nav.Link href="/about" className="me-auto nav-link">About</Nav.Link>
+              <Nav.Link href="/contact" className="me-auto nav-link">Contact</Nav.Link>
               <Nav.Link className="me-auto nav-link"  onClick={() => signInWithRedirect({ provider: "Google"})}>Sign In</Nav.Link>
               <Nav.Link className="me-auto nav-link"  onClick={() => signOut()}>Sign Out</Nav.Link>
             </Nav>

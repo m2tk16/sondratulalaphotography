@@ -47,10 +47,13 @@ const Footer = () => {
                 <Col xs={{ span: 3, offset: 1 }}>
                     <a className="footer-links" href="/portfolio">Portfolio</a>
                 </Col>  
-            </Row> 
+                <Col xs={4}>
+                    <a className="footer-links" href="/contact">Send Message</a>
+                </Col>  
+            </Row>
             <hr></hr>
             <Row>
-                <Col xs={12} className="footer-year">Sondra Tulala Photography - 2024</Col>
+                <Col xs={12} className="footer-year">Sondra Tulala Photography - 2025</Col>
             </Row>
         </Container>
     )
