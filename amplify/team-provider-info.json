@@ -11,5 +11,23 @@
       "StackId": "arn:aws:cloudformation:us-east-1:178450627339:stack/amplify-amplifye3804122add34-staging-15901/7eced520-adc9-11ee-8a3f-12af47939d55",
       "AmplifyAppId": "d3k2ys1vxrbzez"
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sondratulalaphotogra-dev-91b7b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::178450627339:role/amplify-sondratulalaphotogra-dev-91b7b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::178450627339:role/amplify-sondratulalaphotogra-dev-91b7b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sondratulalaphotogra-dev-91b7b-deployment",
+      "UnauthRoleName": "amplify-sondratulalaphotogra-dev-91b7b-unauthRole",
+      "StackName": "amplify-sondratulalaphotogra-dev-91b7b",
+      "StackId": "arn:aws:cloudformation:us-east-1:178450627339:stack/amplify-sondratulalaphotogra-dev-91b7b/eade4360-b8de-11ef-a1a1-129d74a8f803",
+      "AmplifyAppId": "d3k2ys1vxrbzez"
+    },
+    "categories": {
+      "auth": {
+        "sondratulalaphotogra4567947a": {}
+      }
+    }
   }
 }

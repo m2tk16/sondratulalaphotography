@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import SacramentoFont from 'webfontloader';
+import { Hub } from "aws-amplify/utils";
+import { signInWithRedirect, signOut, getCurrentUser, AuthUser } from "aws-amplify/auth";
+import Button from 'react-bootstrap/Button';
 
 
 const NavBar = () => {
@@ -11,7 +14,46 @@ const NavBar = () => {
       }
     });
    }, []);
-
+   
+   const [user, setUser] = useState(null);
+   const [error, setError] = useState(null);
+ 
+   useEffect(() => {
+     const unsubscribe = Hub.listen("auth", ({ payload }) => {
+       switch (payload.event) {
+         case "signInWithRedirect":
+           getUser();
+           break;
+         case "signInWithRedirect_failure":
+           setError("An error has occurred during the OAuth flow.");
+           break;
+       }
+     });
+ 
+     getUser();
+ 
+     return unsubscribe;
+   }, []);
+ 
+   const getUser = async (): Promise<void> => {
+     try {
+       const currentUser = await getCurrentUser();
+       setUser(currentUser);
+     } catch (error) {
+       console.error(error);
+       console.log("Not signed in");
+     }
+   };
+ 
+   signOut({
+    global: false,
+    oauth: {
+      redirectUrl: [
+        'https://www.sondratulalaphotography.com/',
+        'http://localhost:3000/'
+      ]
+    }
+  });
 
   return (
       <Navbar 
@@ -34,6 +76,16 @@ const NavBar = () => {
               <Nav.Link href="/about" className="me-auto nav-link">About</Nav.Link>
               <Nav.Link href="/portfolio" className="me-auto nav-link">Portfolio</Nav.Link>
             </Nav>
+            <div class="login-wrapper">
+              <Button size="sm" variant="outline-secondary" onClick={() => signInWithRedirect({ provider: "Google"})}>
+                Login
+              </Button>
+            </div>
+            <div class="signout-wrapper">
+              <Button size="sm" variant="outline-secondary" onClick={() => signOut()}>
+                Sign Out
+              </Button>
+            </div>
           </Navbar.Collapse>
         </Container>
     </Navbar>

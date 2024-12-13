@@ -12,6 +12,12 @@ import Footer from "./Utilities/footer";
 import Subscribe from "./Subscribe/subscribe";
 import Unsubscribe from "./Unsubscribe/unsubscribe";
 
+import { Amplify } from 'aws-amplify';
+import awsConfig from './aws-exports';
+
+Amplify.configure(awsConfig);
+
+
 function App() {
   // const [endpoint, setEndPoint] = useState({})
 
