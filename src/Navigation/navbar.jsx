@@ -3,8 +3,8 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 import "./navbar.css";
 import SacramentoFont from 'webfontloader';
 import { Hub } from "aws-amplify/utils";
-import { signInWithRedirect, signOut, getCurrentUser, AuthUser } from "aws-amplify/auth";
-import Button from 'react-bootstrap/Button';
+import { signInWithRedirect, signOut, getCurrentUser } from "aws-amplify/auth";
+
 
 
 const NavBar = () => {
@@ -27,15 +27,18 @@ const NavBar = () => {
            getUser();
            break;
          case "signInWithRedirect_failure":
-           setError("An error has occurred during the OAuth flow.");
+           setError("An error has occurred during the Google OAuth flow.");
+           console.log(error);
            break;
+         default:
+            console.warn("Unhandled state:", useState);
        }
      });
  
      getUser();
  
      return unsubscribe;
-   }, []);
+   }, [error]);
  
    const getUser = async (): Promise<void> => {
      try {
