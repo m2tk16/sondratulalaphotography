@@ -18,6 +18,7 @@ const NavBar = () => {
    
    const [user, setUser] = useState(null);
    const [error, setError] = useState(null);
+   
  
    useEffect(() => {
      const unsubscribe = Hub.listen("auth", ({ payload }) => {
@@ -46,15 +47,6 @@ const NavBar = () => {
      }
    };
  
-   signOut({
-    global: false,
-    oauth: {
-      redirectUrl: [
-        'https://www.sondratulalaphotography.com/',
-        'http://localhost:3000/'
-      ]
-    }
-  });
 
   return (
       <Navbar 
@@ -76,17 +68,10 @@ const NavBar = () => {
               <Nav.Link href="/" className="me-auto nav-link">Home</Nav.Link>
               <Nav.Link href="/about" className="me-auto nav-link">About</Nav.Link>
               <Nav.Link href="/portfolio" className="me-auto nav-link">Portfolio</Nav.Link>
+              <Nav.Link className="me-auto nav-link"  onClick={() => signInWithRedirect({ provider: "Google"})}>Sign In</Nav.Link>
+              <Nav.Link className="me-auto nav-link"  onClick={() => signOut()}>Sign Out</Nav.Link>
             </Nav>
-            <div className="login-wrapper">
-              <Button size="sm" variant="outline-secondary" onClick={() => signInWithRedirect({ provider: "Google"})}>
-                Login
-              </Button>
-            </div>
-            <div className="signout-wrapper">
-              <Button size="sm" variant="outline-secondary" onClick={() => signOut()}>
-                Sign Out
-              </Button>
-            </div>
+            <div className="user">{user?.username}</div>
           </Navbar.Collapse>
         </Container>
     </Navbar>
