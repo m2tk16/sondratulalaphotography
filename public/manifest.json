@@ -3,17 +3,17 @@
   "name": "Sondra Tulala Photography",
   "icons": [
     {
-      "src": "into_the_fog.png",
+      "src": "into_the_fog_v2.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "into_the_fog.png",
+      "src": "into_the_fog_v2.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "into_the_fog.png",
+      "src": "into_the_fog_v2.png",
       "type": "image/png",
       "sizes": "512x512"
     }

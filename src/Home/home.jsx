@@ -6,7 +6,7 @@ import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import { list, getUrl } from "@aws-amplify/storage";
 
-import IntoTheFog from '../images/into_the_fog.png'
+import IntoTheFog from '../images/into_the_fog_v2.png'
 
 
 const Home = () => {

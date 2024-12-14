@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./portfolio.css";
 import Container from 'react-bootstrap/Container';
 import PortfolioWrapper from './portfolioWrapper';
-import homeImage from '../images/into_the_fog.png';
+import homeImage from '../images/into_the_fog_v2.png';
 
 const Portfolio = () => {
 

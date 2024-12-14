@@ -1,7 +1,7 @@
 import React from "react";
 import "./portfolio.css";
 import Image from 'react-bootstrap/Image';
-import homeImage from '../images/into_the_fog.png';
+import homeImage from '../images/into_the_fog_v2.png';
 
 interface portfolioProps {
     path: object;
