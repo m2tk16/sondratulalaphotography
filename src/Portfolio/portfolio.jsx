@@ -2,28 +2,25 @@ import React, { useState } from "react";
 import "./portfolio.css";
 import Container from 'react-bootstrap/Container';
 import PortfolioWrapper from './portfolioWrapper';
-import homeImage from '../images/into_the_fog_v2.png';
 
 const Portfolio = () => {
-
-    const imageArray = useState([
-        {homeImage},
-        {homeImage},
-        {homeImage}
+    const [imageArray] = useState([
+        "images/home/into_the_fog.jpg",
+        "images/home/into_the_fog.jpg",
+        "images/home/into_the_fog.jpg"
     ]);
 
     return (
-
         <Container>
-            <div class="row g-2 row justify-content-evenly">
-                {imageArray.map((item, index) => (
-                    <div class="col-10 justify-content-evenly col-10-spaccer">
-                        <PortfolioWrapper image={item}/>
+            <div className="row g-2 justify-content-evenly">
+                {imageArray.map((image, index) => (
+                    <div key={index} className="col-10 justify-content-evenly col-10-spacer">
+                        <PortfolioWrapper path={image} />
                     </div>
                 ))}
             </div>
         </Container>
-    )
-}
+    );
+};
 
 export default Portfolio;
