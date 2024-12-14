@@ -8,6 +8,7 @@ import { list, getUrl } from "@aws-amplify/storage";
 
 import IntoTheFog from '../images/into_the_fog.png'
 
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState(true);
   // const [imageUrl, setImageUrl] = useState(null);
