@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./home.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { list, getUrl } from "@aws-amplify/storage";
+// import { list, getUrl } from "@aws-amplify/storage";
 
 import IntoTheFog from '../images/into_the_fog_v2.png'
 
@@ -13,7 +13,7 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState(true);
   // const [imageUrl, setImageUrl] = useState(null);
 
-
+/*
   useEffect(() => {
     setIsVisible(true);
 
@@ -36,6 +36,7 @@ const Home = () => {
 
     fetchImage();
   }, []);
+*/
 
   return (
     <Container className="home-wrapper">
