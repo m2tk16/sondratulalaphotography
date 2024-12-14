@@ -138,7 +138,7 @@ const Contact = () => {
                                 </Button>
 
                                 <Toast 
-                                    className="mt-3"
+                                    className="mt-3 mx-auto"
                                     show={showToast} 
                                     onClose={() => setShowToast(false)} 
                                     bg={toastVariant} 
