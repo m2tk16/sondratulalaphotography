@@ -10,9 +10,11 @@ const awsmobile = {
     "oauth": {
         "domain": "sondratulalaphotogra4567947a-4567947a-dev.auth.us-east-1.amazoncognito.com",
         "scope": [
+            "phone",
             "email",
             "openid",
-            "profile"
+            "profile",
+            "aws.cognito.signin.user.admin"
         ],
         "redirectSignIn": "http://localhost:3000/,https://www.sondratulalaphotography.com/",
         "redirectSignOut": "https://www.sondratulalaphotography.com/,http://localhost:3000/",
@@ -36,7 +38,14 @@ const awsmobile = {
         "EMAIL"
     ],
     "aws_user_files_s3_bucket": "sondratulalaphotogra57ef4c60cea34275803abda3c9f91b7b-dev",
-    "aws_user_files_s3_bucket_region": "us-east-1"
+    "aws_user_files_s3_bucket_region": "us-east-1",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "SondraTulalaPhotographyContactAPI",
+            "endpoint": "https://nlkcug9ut8.execute-api.us-east-1.amazonaws.com/dev",
+            "region": "us-east-1"
+        }
+    ]
 };
 
 

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/contact/submit": {
+      "name": "/contact/submit",
+      "lambdaFunction": "SondraTulalaPhotographyContact",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

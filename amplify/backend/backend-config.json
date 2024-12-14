@@ -1,4 +1,20 @@
 {
+  "api": {
+    "SondraTulalaPhotographyContactAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "SondraTulalaPhotographyContact"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "sondratulalaphotogra4567947a": {
       "customAuth": false,
@@ -23,6 +39,31 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "SondraTulalaPhotographyContact": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_SondraTulalaPhotographyContact_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SondraTulalaPhotographyContact"
+        }
+      ]
+    },
+    "AMPLIFY_function_SondraTulalaPhotographyContact_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SondraTulalaPhotographyContact"
+        }
+      ]
     }
   },
   "storage": {

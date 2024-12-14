@@ -30,6 +30,15 @@
       },
       "storage": {
         "s3f614b0c2": {}
+      },
+      "function": {
+        "SondraTulalaPhotographyContact": {
+          "deploymentBucketName": "amplify-sondratulalaphotogra-dev-91b7b-deployment",
+          "s3Key": "amplify-builds/SondraTulalaPhotographyContact-4b663365512b504e644e-build.zip"
+        }
+      },
+      "api": {
+        "SondraTulalaPhotographyContactAPI": {}
       }
     }
   }
