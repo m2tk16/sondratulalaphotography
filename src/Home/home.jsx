@@ -17,7 +17,7 @@ const Home = () => {
 
     async function fetchImage() {
         const urlResponse = await getUrl({
-            path: 'images/home/into_the_fog.png',
+            path: 'images/home/into_the_fog.jpg',
         });
         setImageUrl(urlResponse.url);
     }
