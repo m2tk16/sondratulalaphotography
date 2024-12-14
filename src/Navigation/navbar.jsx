@@ -6,7 +6,6 @@ import { Hub } from "aws-amplify/utils";
 import { signInWithRedirect, signOut, getCurrentUser } from "aws-amplify/auth";
 
 
-
 const NavBar = () => {
   useEffect(() => {
     SacramentoFont.load({
