@@ -29,11 +29,11 @@ const NavBar = () => {
             <Nav.Link href="/" className="nav-link fs-5">
               Home
             </Nav.Link>
-            <Nav.Link href="/portfolio" className="nav-link fs-5">
-              Portfolio
-            </Nav.Link>
             <Nav.Link href="/about" className="nav-link fs-5">
               About
+            </Nav.Link>
+            <Nav.Link href="/portfolio" className="nav-link fs-5">
+              Portfolio
             </Nav.Link>
             <Nav.Link href="/contact" className="nav-link fs-5">
               Contact

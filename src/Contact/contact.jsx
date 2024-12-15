@@ -136,7 +136,6 @@ const Contact = () => {
                                 <Button variant="outline-secondary" type="submit" disabled={isSubmitting}>
                                     {isSubmitting ? 'Submitting...' : 'Submit'}
                                 </Button>
-
                                 <Toast 
                                     className="mt-3 mx-auto"
                                     show={showToast} 
@@ -145,8 +144,8 @@ const Contact = () => {
                                     delay={3000} 
                                     autohide
                                 >
-                                    <Toast.Header>
-                                        <strong className="me-auto">Notification</strong>
+                                    <Toast.Header className="d-flex justify-content-between align-items-center">
+                                        <strong className="mx-auto">Email Status</strong>
                                     </Toast.Header>
                                     <Toast.Body>{responseMessage}</Toast.Body>
                                 </Toast>
