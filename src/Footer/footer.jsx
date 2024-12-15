@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import { Envelope, Instagram } from 'react-bootstrap-icons';
+import { signInWithRedirect, signOut } from "aws-amplify/auth";
+import { Nav } from "react-bootstrap";
 
 const Footer = () => {
 
@@ -11,14 +13,14 @@ const Footer = () => {
         <Container className="footer-container">
             <hr></hr> 
             <Row>
-                <Col xs={{ span: 3, offset: 1 }} className="footer-link-title">
+                <Col xs={{ span: 3, offset: 1 }} className="footer-header footer-link-title">
                     Links
                 </Col>
-                <Col xs={4} className="footer-contact-title">
+                <Col xs={4} className="footer-header footer-contact-title">
                     Contact
                 </Col>
-                <Col xs={4} className="footer-contact-title">
-                    Subscription
+                <Col xs={4} className="footer-header footer-contact-title">
+                    Sign In
                 </Col>
             </Row>
             <Row>
@@ -26,10 +28,12 @@ const Footer = () => {
                     <a className="footer-links" href="/">Home</a>
                 </Col>
                 <Col xs={4}>
-                    <a href="mailto:sondratulalaphotography@gmail.com"><Envelope /></a>
+                    <a href="mailto:sondratulalaphotography@gmail.com"><Envelope  style={{ color: "grey" }}/></a>
                 </Col>
                 <Col xs={4}>
-                    <a className="footer-links" href="/subscribe">Subscribe</a>
+                    <Nav.Link className="nav-link footer-links" onClick={() => signInWithRedirect({ provider: "Google" })}>
+                        Sign In
+                    </Nav.Link>
                 </Col>    
             </Row> 
             <Row>
@@ -37,10 +41,10 @@ const Footer = () => {
                     <a className="footer-links" href="/about">About</a>
                 </Col>
                 <Col xs={4}>
-                <a href="instagram://user?username=sondratulalaphotography"><Instagram /></a>
+                <a href="instagram://user?username=sondratulalaphotography"><Instagram  style={{ color: "grey" }}/></a>
                 </Col>
                 <Col xs={4}>
-                    <a className="footer-links" href="/unsubscribe">Unsubscribe</a>
+                    <Nav.Link className="nav-link footer-links" onClick={() => signOut()}>Sign Out</Nav.Link>
                 </Col>    
             </Row> 
             <Row>
@@ -48,7 +52,7 @@ const Footer = () => {
                     <a className="footer-links" href="/portfolio">Portfolio</a>
                 </Col>  
                 <Col xs={4}>
-                    <a className="footer-links" href="/contact">Send Message</a>
+                    <a className="footer-links" href="/contact">Message</a>
                 </Col>  
             </Row>
             <hr></hr>

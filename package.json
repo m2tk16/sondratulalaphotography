@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/auth": "^6.8.3",
     "@aws-amplify/backend-cli": "^1.4.3",
     "@aws-amplify/core": "^6.7.3",
     "@aws-amplify/storage": "^6.7.4",
