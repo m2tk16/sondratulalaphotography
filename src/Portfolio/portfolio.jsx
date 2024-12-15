@@ -7,20 +7,6 @@ import PortfolioWrapper from './portfolioWrapper';
 import { list } from "@aws-amplify/storage";
 
 const Portfolio = () => {
-
-    /*
-    const [imageArray] = useState([
-        "public/images/portfolio/wonderland.webp",
-        "public/images/portfolio/magenta_sky.webp",
-        "public/images/portfolio/stamina_shroom.webp",
-        "public/images/portfolio/frozen.webp",
-        "public/images/portfolio/floating_rocks.webp",
-        "public/images/portfolio/river_run.webp",
-        "public/images/portfolio/loki.webp"
-    ]);
-    */
-
-
     const [imageArray, setImageArray] = useState([]);
 
     useEffect(() => {

@@ -16,7 +16,7 @@ const PortfolioWrapper = (props: portfolioProps) => {
     }, []);
 
     const extractAndFormat = (path) => {
-        const extracted = path.split("/")[2].split(".")[0];
+        const extracted = path.split("/")[3].split(".")[0];
         const formatted = extracted.replace(/_/g, " ");
         const capitalized = formatted
           .split(" ")
