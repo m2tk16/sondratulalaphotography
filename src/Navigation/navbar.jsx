@@ -4,7 +4,6 @@ import "./navbar.css";
 import UseAuth from "../Utilities/auth";
 import SacFont from "../Utilities/fonts";
 
-
 const NavBar = () => {
   SacFont()
   const { user, signInWithRedirect, signOut } = UseAuth();
