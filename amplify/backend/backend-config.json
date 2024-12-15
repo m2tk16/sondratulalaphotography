@@ -9,6 +9,14 @@
           ],
           "category": "function",
           "resourceName": "SondraTulalaPhotographyContact"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "SondraTulalaPhotographyPhotoLikes"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -46,6 +54,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "SondraTulalaPhotographyPhotoLikes": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -62,6 +75,22 @@
         {
           "category": "function",
           "resourceName": "SondraTulalaPhotographyContact"
+        }
+      ]
+    },
+    "AMPLIFY_function_SondraTulalaPhotographyPhotoLikes_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SondraTulalaPhotographyPhotoLikes"
+        }
+      ]
+    },
+    "AMPLIFY_function_SondraTulalaPhotographyPhotoLikes_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SondraTulalaPhotographyPhotoLikes"
         }
       ]
     }

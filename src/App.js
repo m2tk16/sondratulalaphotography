@@ -12,8 +12,6 @@ import About from "./About/about";
 import Portfolio from "./Portfolio/portfolio";
 import Contact from "./Contact/contact";
 import Footer from "./Footer/footer";
-import Subscribe from "./Subscribe/subscribe";
-import Unsubscribe from "./Unsubscribe/unsubscribe";
 
 Amplify.configure(awsConfig);
 
@@ -27,8 +25,6 @@ function App() {
             <Route path='/about' element={<About/>} />
             <Route path='/portfolio' element={<Portfolio/>} />
             <Route path='/contact' element={<Contact/>} />
-            <Route path='/subscribe' element={<Subscribe/>} />
-            <Route path='/unsubscribe' element={<Unsubscribe/>} />
           </Routes>
           <Footer />
         </Router>

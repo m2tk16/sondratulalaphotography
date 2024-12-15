@@ -32,7 +32,7 @@ const NavBar = () => {
             <Nav.Link href="/about" className="nav-link fs-5">
               About
             </Nav.Link>
-            <Nav.Link href="/portfolio" className="nav-link fs-5">
+            <Nav.Link href="/portfolio" className="nav-link fs-5" user={user}>
               Portfolio
             </Nav.Link>
             <Nav.Link href="/contact" className="nav-link fs-5">

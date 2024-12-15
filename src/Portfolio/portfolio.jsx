@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import PortfolioWrapper from './portfolioWrapper';
 import { list } from "@aws-amplify/storage";
 
+
 const Portfolio = () => {
     const [imageArray, setImageArray] = useState([]);
 
@@ -33,7 +34,7 @@ const Portfolio = () => {
         <Container>
             <Row>
                 {imageArray.map((image, index) => (
-                    <Row className="mb-4">
+                    <Row className="mb-4" key={image}>
                         <Col className="col-12" key={index}>
                             <PortfolioWrapper path={image} />
                         </Col>
