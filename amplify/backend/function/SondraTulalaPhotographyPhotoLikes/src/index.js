@@ -1,28 +1,60 @@
 const AWS = require("aws-sdk");
-const jwt = require("jsonwebtoken"); // Required for decoding tokens
+const jwt = require("jsonwebtoken");
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event) => {
+    console.log("Event: ")
+    console.log(event)
+
   try {
     console.log("Incoming Event:", JSON.stringify(event, null, 2));
 
     // Extract token from headers or event body
-    const authorizationHeader = event.headers?.Authorization || event.authorizationToken;
-    if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+    const authorizationHeader = event.headers?.Authorization;
+    console.log(authorizationHeader)
+    if (!authorizationHeader) {
       return {
         statusCode: 401,
-        body: JSON.stringify({ message: "Unauthorized access. Missing token." }),
+        body: JSON.stringify({ message: "Unauthorized access. Missing token. Init" }),
       };
     }
     console.log(authorizationHeader)
-    const token = authorizationHeader.split(" ")[1]; // Extract the token after "Bearer "
-    console.log(token);
 
-    // Decode the token to extract user claims
+    /*
+    // Testing ----------
+    const header = {
+        alg: "HS256",
+        typ: "JWT",
+      };
+      
+      // Define a secret key (replace with a real key in production)
+      const secretKey = "K3aD+GINfQd5/qbwFmHf1sGtuzmoh9izUk5UJSgj8Tg=";
+      
+      // Generate the JWT token
+      const token = jwt.sign(authorizationHeader, secretKey, {
+        algorithm: "HS256", // Hashing algorithm
+        header: header,     // Optional: Set the header explicitly
+      });
+      
+      console.log("Generated JWT Token:", token);
+      console.log("------------------------------")
+    */
+    
+
+    const username = event.headers.Authorization.username; // Use the "Authorization" header directly
+    if (!username) {
+    return {
+        statusCode: 401,
+        body: JSON.stringify({ message: "Unauthorized access. Missing user ID." }),
+    };
+    }
+      /*
     let userClaims;
     try {
-      userClaims = jwt.decode(token); // Decodes the JWT without verifying (optional: add signature verification here)
+      userClaims = jwt.decode(authorizationHeader); // Decodes the JWT without verifying (optional: add signature verification here)
+      console.log("00000000000")
       console.log(userClaims);
+      console.log("111111111111")
       if (!userClaims || !userClaims.sub) {
         throw new Error("Invalid token. Missing user claims.");
       }
@@ -30,11 +62,12 @@ exports.handler = async (event) => {
       console.error("Error decoding token:", err);
       return {
         statusCode: 401,
-        body: JSON.stringify({ message: "Unauthorized access. Invalid token." }),
+        body: JSON.stringify({ message: "Unauthorized access. Invalid token. Decoding" }),
       };
     }
+    */
 
-    const userId = userClaims.sub;
+    //const username = authorizationHeader.username;
 
     // Parse request body
     const requestBody = JSON.parse(event.body);
@@ -99,6 +132,8 @@ exports.handler = async (event) => {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Amz-Date, X-Api-Key, X-Amz-Security-Token",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET,ANY",
       },
       body: JSON.stringify({
         message: "Like status updated successfully.",
@@ -113,6 +148,8 @@ exports.handler = async (event) => {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Amz-Date, X-Api-Key, X-Amz-Security-Token",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET,ANY",
       },
       body: JSON.stringify({
         message: "An error occurred while updating like status.",

@@ -39,7 +39,7 @@
         },
         "SondraTulalaPhotographyPhotoLikes": {
           "deploymentBucketName": "amplify-sondratulalaphotogra-dev-91b7b-deployment",
-          "s3Key": "amplify-builds/SondraTulalaPhotographyPhotoLikes-57426f4a6e4570422b71-build.zip"
+          "s3Key": "amplify-builds/SondraTulalaPhotographyPhotoLikes-496e483070474e574757-build.zip"
         }
       },
       "api": {
