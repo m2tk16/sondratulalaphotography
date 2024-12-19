@@ -22,7 +22,7 @@ const GetImage = ({ imagePath, className = "", fluid = true }) => {
   return (
     <>
       {imageUrl ? (
-        <Image className={className} src={imageUrl} fluid={fluid} />
+        <Image className={className} src={imageUrl} fluid={fluid} loading="lazy" />
       ) : (
         <div className="loading-spinner">
           <Spinner animation="border" role="status"></Spinner>

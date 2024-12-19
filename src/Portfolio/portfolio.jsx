@@ -3,6 +3,7 @@ import "./portfolio.css";
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Card from 'react-bootstrap/Card';
 import PortfolioWrapper from './portfolioWrapper';
 import { list } from "@aws-amplify/storage";
 
@@ -13,13 +14,20 @@ const Portfolio = () => {
     useEffect(() => {
         const fetchImages = async () => {
           try {
-            const result = await list("images/portfolio");
-            const filteredImages = result.items.filter(item => 
+            const result = await list({ prefix: "images/portfolio/" });
+            console.log(result);
+            const filteredImages = result.items.filter(
+              (item) =>
                 item.key &&
                 (item.key.endsWith(".png") || item.key.endsWith(".jpg") || item.key.endsWith(".webp"))
-              );
-            const imagePaths = filteredImages.map(item => "public/" + item.key)
-            setImageArray(imagePaths);
+            );
+            
+            const filenames = filteredImages.map((item) => {
+              const parts = "public/" + item.key;
+              return parts;
+            });
+            
+            setImageArray(filenames);
 
           } catch (err) {
             console.error("Error fetching images:", err);
@@ -32,6 +40,13 @@ const Portfolio = () => {
     
     return (
         <Container>
+            <Row className="justify-content-center g-4">
+                <Col xs={12} md={12} className="text-center p-4">
+                    <Card className="portfolio-title">
+                        <div className="font-loader">My Portfolio</div>
+                    </Card>
+                </Col>
+            </Row>
             <Row>
                 {imageArray.map((image, index) => (
                     <Row className="mb-4" key={image}>

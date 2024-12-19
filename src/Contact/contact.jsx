@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Toast from 'react-bootstrap/Toast';
+import Card from 'react-bootstrap/Card';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -62,6 +63,13 @@ const Contact = () => {
 
     return (
         <>
+            <Row className="justify-content-center g-4">
+                <Col xs={12} md={12} className="text-center p-4">
+                    <Card className="portfolio-title">
+                        <div className="font-loader">Contact Me!</div>
+                    </Card>
+                </Col>
+            </Row>
             <Row className="d-flex justify-content-center align-items-center px-5">
                 <Col sm={6} md={4} className="text-center mb-4 mt-4">
                     Have a question or just curious about photography tips, my journey, or the options I offer? 

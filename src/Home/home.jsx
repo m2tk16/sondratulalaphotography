@@ -14,7 +14,7 @@ const Home = () => {
       <Row>
         <Col sm={12}>
           <GetImage
-            imagePath="public/images/home/into_the_fog.jpg"
+            imagePath="public/images/home/into_the_fog.webp"
             className={`home-image ${isVisible ? "visible" : ""}`}
           />
         </Col>

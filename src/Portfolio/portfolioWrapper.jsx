@@ -34,43 +34,42 @@ const PortfolioWrapper: React.FC<PortfolioWrapperProps> = ({ path }) => {
   }, []);
 
   const handleLikeClick = async () => {
-    console.log(authSession)
+    const accessToken = authSession?.tokens?.accessToken?.payload;
+    console.log(accessToken);
 
-    
-    if (!authSession?.tokens) {
+    if (!accessToken) {
       console.error("User is not authenticated. Cannot like the photo.");
       return;
     }
-
-    try {
-      const response = await fetch(
-        "https://nlkcug9ut8.execute-api.us-east-1.amazonaws.com/dev/photos/likes",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${authSession.credentials.sessionToken}`,
-          },
-          body: JSON.stringify({
-            username: authSession.tokens.accessToken.payload.username, 
-            photo: path,
-            liked: "Y",
-          }),
+    
+    //try {
+        const response = await fetch(
+          "https://nlkcug9ut8.execute-api.us-east-1.amazonaws.com/dev/photos/likes",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: accessToken.sub
+            },
+            body: JSON.stringify({
+              username: accessToken.username,
+              photo: path,
+              liked: "Y",
+            }),
+          }
+        );
+        console.log("--------")
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      console.log("Like Response:", result);
-
-      // Update the like count based on the response
-      setLikeCount(result.totalLikes || 0);
-    } catch (error) {
-      console.error("Error liking the photo:", error);
-    }
+    
+        const result = await response.json();
+        console.log("Like Response:", result);
+    
+        setLikeCount(result.totalLikes || 0);
+      //} catch (error) {
+      //  console.error("Error liking the photo:", error);
+      //}
   };
 
   return (
