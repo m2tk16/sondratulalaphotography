@@ -1,4 +1,3 @@
----
 version: 1
 frontend:
   phases:
@@ -15,15 +14,18 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-  redirects:
-    - condition: $AMPLIFY_BRANCH === 'main'
-    - source: https://sondratulalaphotography.com
-    - target: https://www.sondratulalaphotography.com
-    - status: 200
-    - condition: $AMPLIFY_BRANCH === 'dev'
-    - source: https://dev.sondratulalaphotography.com
-    - target: https://www.dev.sondratulalaphotography.com
-    - status: 200
-    - source: /<*>
-    - target: /index.html
-    - status: 200
+redirects:
+  - source: https://sondratulalaphotography.com/<*>
+    target: https://www.sondratulalaphotography.com/<*>
+    status: 301
+  - condition: $AMPLIFY_BRANCH === 'main'
+    source: </*>
+    target: /index.html
+    status: 200
+  - condition: $AMPLIFY_BRANCH === 'dev'
+    source: </*>
+    target: /index.html
+    status: 200
+  - source: https://sondratulalaphotography.com/<*>
+    target: https://dev.sondratulalaphotography.com/<*>
+    status: 200
