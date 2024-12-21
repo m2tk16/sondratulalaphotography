@@ -1,4 +1,3 @@
----
 version: 1
 frontend:
   phases:
@@ -22,9 +21,9 @@ frontend:
     - source: https://www.dev.sondratulalaphotography.com/<*>
       target: https://dev.sondratulalaphotography.com/<*>
       status: 301
-    - source: /<*>
-      target: /index.html
-      status: 200
     - source: /index.html
       target: /
+      status: 301
+    - source: </*>
+      target: /index.html
       status: 200
