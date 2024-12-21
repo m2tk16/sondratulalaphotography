@@ -15,14 +15,8 @@ frontend:
     paths:
       - node_modules/**/*
   redirects:
-    - source: https://sondratulalaphotography.com/<*>
-      target: https://sondratulalaphotography.com/<*>
-      status: 301
     - source: https://www.sondratulalaphotography.com/<*>
       target: https://sondratulalaphotography.com/<*>
-      status: 301
-    - source: https://dev.sondratulalaphotography.com/<*>
-      target: https://dev.sondratulalaphotography.com/<*>
       status: 301
     - source: https://www.dev.sondratulalaphotography.com/<*>
       target: https://dev.sondratulalaphotography.com/<*>
