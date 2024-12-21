@@ -1,0 +1,29 @@
+---
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci --force
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+  redirects:
+    - condition: $AMPLIFY_BRANCH === 'main'
+    - source: https://sondratulalaphotography.com
+    - target: https://www.sondratulalaphotography.com
+    - status: 200
+    - condition: $AMPLIFY_BRANCH === 'dev'
+    - source: https://dev.sondratulalaphotography.com
+    - target: https://www.dev.sondratulalaphotography.com
+    - status: 200
+    - source: /<*>
+    - target: /index.html
+    - status: 200
