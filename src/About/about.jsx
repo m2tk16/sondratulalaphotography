@@ -20,7 +20,7 @@ const About = () => {
                 <Col xs={12} md={6} className="text-center p-4">
                     <Card className="about-me-card">
                         <Card.Body>
-                            Hi there! Welcome to my photography website! My name is Sondra, and I am so excited to share my pictures with you. 
+                            Hi there! Welcome to my photography website! My name is Sondra, and I'm so excited to share my pictures with you. 
                             Photography is a hobby that makes me really happy, and this website is a way for me to show my work and connect with 
                             people who also enjoy beautiful moments. My gallery has photos of landscapes, still-life scenes, and even some fun 
                             pictures of my Labrador, Loki.
