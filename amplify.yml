@@ -11,7 +11,6 @@ frontend:
       - echo "Installing dependencies"
       - npm ci --prefer-offline
       - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
-
     build:
       commands:
         - npm run build
